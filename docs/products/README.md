@@ -122,5 +122,7 @@ The Products API allows you to perform various product-related operations, inclu
 
 #### Additional Notes
 Non-authenticated users and authenticated users (non-admin) can only use GET requests to retrieve product details.
+
 The API supports pagination for large product lists. You can specify the page and page size as query parameters, e.g., /api/products/?page=1&page_size=10.
+
 Products are categorized. You can assign a product to a specific category by providing the category field in the request body when creating or updating a product.
