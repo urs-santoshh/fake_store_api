@@ -8,7 +8,6 @@ Before you begin, make sure you have the following software installed on your co
 
 - Python 3.x
 - pip (Python package manager)
-- Virtualenv (optional but recommended for creating a virtual environment)
 - MySQL (optional)
 - Docker (optional)
 
