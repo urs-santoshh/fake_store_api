@@ -13,9 +13,9 @@ Before you begin, make sure you have the following software installed on your co
   1. Open your terminal or command prompt.
   2. Navigate to the directory where you want to clone the FakeStore API repository.
   3. Run the following command to clone the repository:
-    ```bash
-        https://github.com/urs-santoshh/fake_store_api.git
-    ```
+     ```bash
+        git clone "https://github.com/urs-santoshh/fake_store_api.git"
+     ```
 
 ### Setup Virtual Environment (Optional)
 We recommend using a virtual environment to isolate the project's dependencies. If you choose not to use a virtual environment, you can skip this step.
