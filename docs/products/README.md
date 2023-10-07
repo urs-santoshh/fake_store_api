@@ -81,7 +81,7 @@ The Products API allows you to perform various product-related operations, inclu
       ```
     
 #### Update a Product (Admin Only)
-  - **URL:** `/api/products/`
+  - **URL:** `/api/products/{product_id}/`
   - **Method:** `PATCH`
   - **Description:** Update the details of a specific product by providing its unique product_id and the new product details in the request body. This operation is restricted to admin users.
   - **Request Headers:**
@@ -111,18 +111,16 @@ The Products API allows you to perform various product-related operations, inclu
       ```
       
 #### DELETE a Product (Admin Only)
-  - **URL:** `/api/products/`
+  - **URL:** `/api/products/{product_id}/`
   - **Method:** `DELETE`
   - **Description:** Update the details of a specific product by providing its unique product_id and the new product details in the request body. This operation is restricted to admin users.
   - **Request Headers:**
     - Authorization: Token your_valid_admin_token_here 
     - Content-Type: application/json
-    - **Request Body Example:**
-     ```json
-         {
-            "product_id": 1 // Replace with the  product ID with the id you want to delete
-        }
-     ```
   - **Response:**
     - Status Code: 204 No Content
-      ```
+
+#### Additional Notes
+Non-authenticated users and authenticated users (non-admin) can only use GET requests to retrieve product details.
+The API supports pagination for large product lists. You can specify the page and page size as query parameters, e.g., /api/products/?page=1&page_size=10.
+Products are categorized. You can assign a product to a specific category by providing the category field in the request body when creating or updating a product.
