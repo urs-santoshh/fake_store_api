@@ -1,27 +1,52 @@
 # FakeStore API Documentation
 
 ## Products API
-The Products API allows you to perform various operations related to products, including retrieving product details. Only admin users have permission to create, update, and delete products.
+The Products API allows you to perform various product-related operations, including retrieving product details. Only admin users have permission to create, update, and delete products.
 
-#### Get List of Products
-    - **URL:** `/api/products/`
-    - **Method:** `GET`
-    - **Description:** Retrieve a list of all products.
+#### Get a List of Products
+- **URL:** `/api/products/`
+- **Method:** `GET`
+- **Description:** Retrieve a list of all products.
+- **Response:**
+  - Status Code: `200 OK`
+  - Data Type: JSON Array
+  - Example Response:
+    ```json
+    [
+        {
+            "product_id": 1,
+            "name": "Product Name 1",
+            "description": "Product Description 1",
+            "price": 99.99,
+            "category": 1
+        },
+        {
+            "product_id": 2,
+            "name": "Product Name 2",
+            "description": "Product Description 2",
+            "price": 49.99,
+            "category": 2
+        }
+        // ... more products
+    ]
+    ```
 
 #### Get Product Details
-    - **URL:** `/api/products/{product_id}/`
-    - **Method:** `GET`
-    - **Description:** Retrieve details of a specific product by providing its unique `product_id`.
 
-### Create a New Product (Admin Only)
-    - **URL:** `/api/products/`
-    - **Method:** `POST`
-    - **Description:** Create a new product by providing product details in the request body. This operation is restricted to admin users.
-    **Request Body Example:**
+- **URL:** `/api/products/{product_id}/`
+- **Method:** `GET`
+- **Description:** Retrieve details of a specific product by providing its unique `product_id`.
+
+  **Response:**
+  - Status Code: `200 OK`
+  - Data Type: JSON Object
+  - Example Response:
     ```json
     {
-        "name": "Product Name",
-        "description": "Product Description",
+        "product_id": 1,
+        "name": "Product Name 1",
+        "description": "Product Description 1",
         "price": 99.99,
-        "category": 1  // Replace with the category ID
+        "category": 1
     }
+    ```
