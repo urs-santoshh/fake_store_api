@@ -113,7 +113,7 @@ Run the following commands to apply database migrations:
 
 ### Create Superuser
 
-Rin the following command to create superuser for admin privileges:
+Run the following command to create superuser for admin privileges:
 
    ```bash
        python manage.py createsuperuser
