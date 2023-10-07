@@ -26,6 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # installed from third party libraries
+    'rest_framework',
+    'drf_yasg',
+
     #project based created apps
     'cart',
     'orders',
@@ -103,6 +107,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+REST_FRAMEWORK = {
+    # ... your other DRF settings ...
+}
 
 
 # Internationalization
