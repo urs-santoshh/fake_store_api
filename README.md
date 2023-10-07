@@ -46,10 +46,10 @@ We recommend using a virtual environment to isolate the project's dependencies. 
 
 Create a `.env` file in the project root directory and configure the following environment variables:
 
-```env
-  ENVIRONMENT = <your environment PRODUCTION|DEVELOPMENT>
-  SECRET_KEY = <your django secret key here>
-```
+   ```env
+     ENVIRONMENT = <your environment PRODUCTION|DEVELOPMENT>
+     SECRET_KEY = <your django secret key here>
+   ```
 
 ### Database Configuration Options
 
@@ -70,9 +70,9 @@ If you prefer to use MySQL in a Docker container, ensure you have Docker install
    ```
 2. Start the MySQL container using Docker Compose:
 
-```bash
-    docker-compose up -d
-```
+   ```bash
+       docker-compose up -d
+   ```
 
 This command launches a MySQL container configured to work with the FakeStore API.
 
@@ -83,42 +83,42 @@ If you prefer to use the default SQLite database included with the project, foll
 1. Open the base.py file in the fakestore app settings directory.
 2. Uncomment the default SQLite database settings by removing the comment (#) in front of the following lines and comment the Myswl database settings:
 
-```bash
-    DATABASES = {
-          'default': {
-              'ENGINE': 'django.db.backends.sqlite3',
-              'NAME': BASE_DIR / 'db.sqlite3',
-          }
-      }
-
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.mysql',
-    #         'NAME': os.environ.get('MYSQL_DATABASE'),
-    #         'USER': os.environ.get('MYSQL_USER'),
-    #         'PASSWORD': os.environ.get('MYSQL_PASSWORD'),
-    #         'HOST': os.environ.get('MYSQL_HOST'),  # Use the service name defined in your Docker Compose file in production
-    #         'PORT': os.environ.get('MYSQL_PORT'),   # Default MySQL port
-    #     }
-    # }
-```
+   ```bash
+       DATABASES = {
+             'default': {
+                 'ENGINE': 'django.db.backends.sqlite3',
+                 'NAME': BASE_DIR / 'db.sqlite3',
+             }
+         }
+   
+       # DATABASES = {
+       #     'default': {
+       #         'ENGINE': 'django.db.backends.mysql',
+       #         'NAME': os.environ.get('MYSQL_DATABASE'),
+       #         'USER': os.environ.get('MYSQL_USER'),
+       #         'PASSWORD': os.environ.get('MYSQL_PASSWORD'),
+       #         'HOST': os.environ.get('MYSQL_HOST'),  # Use the service name defined in your Docker Compose file in production
+       #         'PORT': os.environ.get('MYSQL_PORT'),   # Default MySQL port
+       #     }
+       # }
+   ```
 
 ### Apply Migrations
 
 Run the following commands to apply database migrations:
 
-```bash
-  python manage.py makemigrations
-  python manage.py migrate
-```
+   ```bash
+     python manage.py makemigrations
+     python manage.py migrate
+   ```
 
 ### Run the Development Server
 
 Start the development server to run the FakeStore API locally:
 
-```bash
-    python manage.py runserver
-```
+   ```bash
+       python manage.py runserver
+   ```
 
 The API should now be running at `http://127.0.0.1:8000/`.
 
@@ -126,17 +126,17 @@ The API should now be running at `http://127.0.0.1:8000/`.
 
 Start the development server to run the FakeStore API locally:
 
-```bash
-    python manage.py createsuperuser
-```
+   ```bash
+       python manage.py createsuperuser
+   ```
 
 ### Access API Documentation
 
 You can access the API documentation by visiting the following URL in your web browser:
 
-```
-    http://127.0.0.1:8000/api/
-```
+   ```
+       http://127.0.0.1:8000/api/
+   ```
 
 This interactive documentation provides details on available API endpoints and allows you to test them.
 
