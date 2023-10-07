@@ -80,7 +80,7 @@ This command launches a MySQL container configured to work with the FakeStore AP
 If you prefer to use the default SQLite database included with the project, follow these steps:
 
 1. Open the base.py file in the fakestore app settings directory.
-2. Uncomment the default SQLite database settings by removing the comment (#) in front of the following lines and comment the Myswl database settings:
+2. Uncomment the default SQLite database settings by removing the comment (#) in front of the following lines and comment the MySql database settings:
 
    ```bash
        DATABASES = {
@@ -111,6 +111,15 @@ Run the following commands to apply database migrations:
      python manage.py migrate
    ```
 
+### Create Superuser
+
+Rin the following command to create superuser for admin privileges:
+
+   ```bash
+       python manage.py createsuperuser
+   ```
+
+
 ### Run the Development Server
 
 Start the development server to run the FakeStore API locally:
@@ -121,13 +130,6 @@ Start the development server to run the FakeStore API locally:
 
 The API should now be running at `http://127.0.0.1:8000/`.
 
-### Create Superuser
-
-Start the development server to run the FakeStore API locally:
-
-   ```bash
-       python manage.py createsuperuser
-   ```
 
 ### Access API Documentation
 
