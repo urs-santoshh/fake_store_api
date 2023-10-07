@@ -143,7 +143,15 @@ This interactive documentation provides details on available API endpoints and a
 
 ### Usage
 
-You can now start using the FakeStore API to manage products, orders, carts, and more. Refer to the API documentation for specific endpoints and usage instructions.
+You can now start using the FakeStore APIs to manage various aspects of the application. Refer to the API documentation for specific endpoints and usage instructions:
+
+- [Products API Documentation](docs/products/readme.md)
+- [Orders API Documentation](docs/orders/readme.md)
+- [Cart API Documentation](docs/carts/readme.md)
+- [Search APIs Documentation](docs/search/readme.md)
+
+Each API documentation provides details on available endpoints and how to use them.
+
 
 ### Contributing
 
