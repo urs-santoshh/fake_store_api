@@ -38,7 +38,13 @@ The Products API allows you to perform various product-related operations, inclu
                     ]
           }
     ```
-  The API supports pagination for large product lists. You can specify the page and page size as query parameters, e.g., /api/products/?page=1&page_size=10.
+  ##### Query Parameters
+
+- `page`: Use the `page` parameter for pagination. Example: `?page=2`.
+- `category`: Filter products by category. Example: `?category=2` filters products in category 2.
+- `price`: Filter products with a given price. Example: `?price=50`.
+- `min_price`: Filter products with a minimum price. Example: `?min_price=50`.
+- `max_price`: Filter products with a maximum price. Example: `?max_price=100`.
 
 #### Get Product Details
 
