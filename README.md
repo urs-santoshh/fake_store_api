@@ -145,21 +145,21 @@ This interactive documentation provides details on available API endpoints and a
 
 You can now start using the FakeStore APIs to manage various aspects of the application. Refer to the API documentation for specific endpoints and usage instructions:
 
-- [Products API Documentation](docs/products/README.md)
-- [Orders API Documentation](docs/orders/README.md)
-- [Cart API Documentation](docs/carts/README.md)
-- [Search APIs Documentation](docs/search/README.md)
+- [Products API Documentation](/docs/products/README.md)
+- [Orders API Documentation](/docs/orders/README.md)
+- [Cart API Documentation](/docs/carts/README.md)
+- [Search APIs Documentation](/docs/search/README.md)
 
 Each API documentation provides details on available endpoints and how to use them.
 
 
 ### Models
-For detailed information on the models used in the FakeStore API, please refer to the [Model Documentation](docs/README.md).
+For detailed information on the models used in the FakeStore API, please refer to the [Model Documentation](/docs/README.md).
 
 ### Contributing
 
-If you'd like to contribute to the development of the FakeStore API, please follow the guidelines in the [CONTRIBUTING.md](docs/CONTRIBUTING.md) file.
+If you'd like to contribute to the development of the FakeStore API, please follow the guidelines in the [CONTRIBUTING.md](/docs/CONTRIBUTING.md) file.
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE.md](docs/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](/docs/LICENSE.md) file for details.
