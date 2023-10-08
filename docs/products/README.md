@@ -38,13 +38,12 @@ The Products API allows you to perform various product-related operations, inclu
                     ]
           }
     ```
-  ##### Query Parameters
-
-- `page`: Use the `page` parameter for pagination. Example: `?page=2`.
-- `category`: Filter products by category. Example: `?category=2` filters products in category 2.
-- `price`: Filter products with a given price. Example: `?price=50`.
-- `min_price`: Filter products with a minimum price. Example: `?min_price=50`.
-- `max_price`: Filter products with a maximum price. Example: `?max_price=100`.
+- **Query Parameters:**
+  - `page`: Use the `page` parameter for pagination. Example: `GET /api/products/?page=1`.
+  - `category`: Filter products by category. Example: `?GET /api/products/?category=2` filters products in category 2.
+  - `price`: Filter products with a given price. Example: `GET /api/products/?price=50`.
+  - `min_price`: Filter products with a minimum price. Example: `GET /api/products/?min_price=50`.
+  - `max_price`: Filter products with a maximum price. Example: `GET /api/products/?max_price=100`.
 
 #### Get Product Details
 
