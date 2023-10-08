@@ -153,10 +153,13 @@ You can now start using the FakeStore APIs to manage various aspects of the appl
 Each API documentation provides details on available endpoints and how to use them.
 
 
+### Models
+For detailed information on the models used in the FakeStore API, please refer to the [Model Documentation](docs/README.md).
+
 ### Contributing
 
-If you'd like to contribute to the development of the FakeStore API, please follow the guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+If you'd like to contribute to the development of the FakeStore API, please follow the guidelines in the [CONTRIBUTING.md](docs/CONTRIBUTING.md) file.
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](docs/LICENSE.md) file for details.
