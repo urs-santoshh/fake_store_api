@@ -1,7 +1,7 @@
 # FakeStore API Documentation
 
 ### Models
-![Model](docs/fake_store_db_eer.png)
+![Model](/docs/fake_store_db_eer.png)
 
 #### Product Model
 
