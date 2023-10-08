@@ -138,5 +138,6 @@ The Products API allows you to perform various product-related operations, inclu
 - **Request Headers:**
   - Authorization: Token your_valid_admin_token_here
   - Content-Type: application/json
+  - X-CSRFToken: your_csrf_token
 - **Response:**
   - Status Code: 204 No Content
