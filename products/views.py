@@ -16,7 +16,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 class ProductDetailViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = [IsAdminOrReadOnly]
+    permission_classes = (IsAdminOrReadOnly,)
 
 
 product_view_set = ProductViewSet.as_view({'get': 'list', 'post': 'create'})
