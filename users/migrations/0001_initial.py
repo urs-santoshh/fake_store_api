@@ -3,7 +3,7 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import products.models
+import django_countries.fields
 
 
 class Migration(migrations.Migration):
@@ -16,32 +16,33 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='ProductCategory',
+            name='Profile',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, verbose_name='Category name')),
-                ('icon', models.ImageField(blank=True, upload_to=products.models.category_image_path)),
+                ('avatar', models.ImageField(blank=True, upload_to='avatar')),
+                ('bio', models.CharField(blank=True, max_length=200)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
+                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='profile', to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                'verbose_name': 'Product Category',
-                'verbose_name_plural': 'Product Categories',
+                'ordering': ('-created_at',),
             },
         ),
         migrations.CreateModel(
-            name='Product',
+            name='Address',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200)),
-                ('desc', models.TextField(blank=True, verbose_name='Description')),
-                ('image', models.ImageField(blank=True, upload_to=products.models.product_image_path)),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('quantity', models.IntegerField(default=1)),
+                ('address_type', models.CharField(choices=[('B', 'billing'), ('S', 'shipping')], max_length=1)),
+                ('default', models.BooleanField(default=False)),
+                ('country', django_countries.fields.CountryField(max_length=2)),
+                ('city', models.CharField(max_length=100)),
+                ('street_address', models.CharField(max_length=100)),
+                ('apartment_address', models.CharField(max_length=100)),
+                ('postal_code', models.CharField(blank=True, max_length=20)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('category', models.ForeignKey(on_delete=models.SET(products.models.get_default_product_category), related_name='product_list', to='products.productcategory')),
-                ('seller', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='products', to=settings.AUTH_USER_MODEL)),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='addresses', to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'ordering': ('-created_at',),

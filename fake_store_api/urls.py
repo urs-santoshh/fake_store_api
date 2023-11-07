@@ -15,9 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
+from django.views.generic import TemplateView
 from rest_framework import permissions
+from dj_rest_auth.registration.views import ResendEmailVerificationView, VerifyEmailView
+from dj_rest_auth.views import (
+    LogoutView,
+    PasswordChangeView,
+    PasswordResetConfirmView,
+    PasswordResetView,
+)
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+
+from users.views import GoogleLogin
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -36,7 +46,32 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path("api/user/", include("users.urls", namespace="users")),
     path("api/products/", include("products.urls", namespace="products")),
+    path("api/user/cart/", include("cart.urls", namespace="cart")),
+    path("api/user/orders/", include("orders.urls", namespace="orders")),
+    path(
+        "resend-email/", ResendEmailVerificationView.as_view(), name="rest_resend_email"
+    ),
+    re_path(
+        r"^account-confirm-email/(?P<key>[-:\w]+)/$",
+        VerifyEmailView.as_view(),
+        name="account_confirm_email",
+    ),
+    path(
+        "account-email-verification-sent/",
+        TemplateView.as_view(),
+        name="account_email_verification_sent",
+    ),
+    path("user/login/google/", GoogleLogin.as_view(), name="google_login"),
+    path("password/reset/", PasswordResetView.as_view(), name="rest_password_reset"),
+    path(
+        "password/reset/confirm/<str:uidb64>/<str:token>",
+        PasswordResetConfirmView.as_view(),
+        name="password_reset_confirm",
+    ),
+    path("password/change/", PasswordChangeView.as_view(), name="rest_password_change"),
+    path("logout/", LogoutView.as_view(), name="rest_logout"),
 ]
 
 urlpatterns += [
