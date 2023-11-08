@@ -1,6 +1,6 @@
 # Fake Store API Documentation
 
-The FakeStore API is a RESTful API for managing products, orders, carts, and more. This document provides instructions on how to clone and run the FakeStore API on your local machine.
+The FakeStore API is a RESTful API for managing products, orders, carts, and more. This documentation provides instructions on how to clone and run the FakeStore API on your local machine.
 
 ### Prerequisites
 
