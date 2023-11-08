@@ -4,7 +4,7 @@ The FakeStore API is a RESTful API for managing products, orders, carts, and mor
 
 ### Prerequisites
 
-Before you begin, make sure you have the following software installed on your computer:
+Before you begin, make sure you have the following installed on your computer:
 
 - Python 3.x
 - pip (Python package manager)
@@ -26,19 +26,19 @@ We recommend using a virtual environment to isolate the project's dependencies. 
 
 1. Navigate to the project directory:
    ```bash
-     cd fake_store_api
+      cd fake_store_api
    ```
 2. Create a virtual environment (Python 3.x) and activate it:
    ```bash
-     python -m venv .venv
-     source venv/bin/activate  # On Windows, use "./venv/scripts/activate"
+      python -m venv .venv
+      source venv/bin/activate  # On Windows, use "./venv/scripts/activate"
    ```
 
 ### Install Dependencies
 
 1. Install the project dependencies using pip:
    ```bash
-     pip install -r requirements.txt
+      pip install -r requirements.txt
    ```
 
 ### Configure Environment Variables
@@ -46,8 +46,10 @@ We recommend using a virtual environment to isolate the project's dependencies. 
 Create a `.env` file in the project root directory and configure the following environment variables:
 
    ```env
-     ENVIRONMENT = <your environment PRODUCTION|DEVELOPMENT>
-     SECRET_KEY = <your django secret key here>
+      ENVIRONMENT = {your environment PRODUCTION|DEVELOPMENT}
+      MY_DOMAIN=http://127.0.0.1:8000
+      SECRET_KEY = {your django secret key here}
+      SITE_ID = {your django site it}
    ```
 
 ### Database Configuration Options
@@ -60,17 +62,17 @@ If you prefer to use MySQL in a Docker container, ensure you have Docker install
 
 1. Update the .env file with your MySQL database credentials:
    ```env
-     MYSQL_DATABASE = <your-database-name>
-     MYSQL_HOST = <your-database-host>
-     MYSQL_PASSWORD = <your-password>
-     MYSQL_PORT = <Mysql default port>
-     MYSQL_ROOT_PASSWORD = <your-root-password>
-     MYSQL_USER = <your-username>
+      MYSQL_DATABASE = {your-database-name}
+      MYSQL_HOST = {your-database-host}
+      MYSQL_PASSWORD = {your-password}
+      MYSQL_PORT = {Mysql default port}
+      MYSQL_ROOT_PASSWORD = {your-root-password}
+      MYSQL_USER = {your-username}
    ```
 2. Start the MySQL container using Docker Compose:
 
    ```bash
-       docker-compose up -d
+      docker-compose up -d
    ```
 
 This command launches a MySQL container configured to work with the FakeStore API.
@@ -107,8 +109,8 @@ If you prefer to use the default SQLite database included with the project, foll
 Run the following commands to apply database migrations:
 
    ```bash
-     python manage.py makemigrations
-     python manage.py migrate
+      python manage.py makemigrations
+      python manage.py migrate
    ```
 
 ### Create Superuser
@@ -116,7 +118,7 @@ Run the following commands to apply database migrations:
 Run the following command to create superuser for admin privileges:
 
    ```bash
-       python manage.py createsuperuser
+      python manage.py createsuperuser
    ```
 
 
@@ -125,7 +127,7 @@ Run the following command to create superuser for admin privileges:
 Start the development server to run the FakeStore API locally:
 
    ```bash
-       python manage.py runserver
+      python manage.py runserver
    ```
 
 The API should now be running at `http://127.0.0.1:8000/`.
@@ -136,7 +138,7 @@ The API should now be running at `http://127.0.0.1:8000/`.
 You can access the API documentation by visiting the following URL in your web browser:
 
    ```
-       http://127.0.0.1:8000/api/
+      http://127.0.0.1:8000/api/
    ```
 
 This interactive documentation provides details on available API endpoints and allows you to test them.
@@ -146,9 +148,9 @@ This interactive documentation provides details on available API endpoints and a
 You can now start using the FakeStore APIs to manage various aspects of the application. Refer to the API documentation for specific endpoints and usage instructions:
 
 - [Products API Documentation](/docs/products/README.md)
-<!-- - [Orders API Documentation](/docs/orders/README.md)
+- [Orders API Documentation](/docs/orders/README.md)
 - [Cart API Documentation](/docs/carts/README.md)
-- [Search API Documentation](/docs/search/README.md) -->
+- [Search API Documentation](/docs/search/README.md)
 
 Each API documentation provides details on available endpoints and how to use them.
 
