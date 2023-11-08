@@ -150,6 +150,7 @@ You can now start using the FakeStore APIs to manage various aspects of the appl
 - [Products API Documentation](/docs/products/README.md)
 - [Orders API Documentation](/docs/orders/README.md)
 - [Cart API Documentation](/docs/carts/README.md)
+- [User API Documentation](/docs/users/README.md)
 - [Search API Documentation](/docs/search/README.md)
 
 Each API documentation provides details on available endpoints and how to use them.

@@ -15,21 +15,21 @@ The Products API allows you to perform various product-related operations, inclu
   - Example Response:
     ```json
           {
-            "count": integer,
-            "next": string($uri),
-            "previous": string($uri),
+            "count": "integer",
+            "next": "string($uri)",
+            "previous": "string($uri)",
             "results":
                     [{
-                      "id": integer,
-                      "seller": string,
-                      "category": string,
-                      "name": string,
-                      "desc": string,
-                      "image": string($uri),
-                      "price": string($decimal),
-                      "quantity": integer,
-                      "created_at": string($date-time),
-                      "updated_at": string($date-time),
+                      "id": "integer",
+                      "seller": "string",
+                      "category": "string",
+                      "name": "string",
+                      "desc": "string",
+                      "image": "string($uri)",
+                      "price": "string($decimal)",
+                      "quantity": "integer",
+                      "created_at": "string($date-time)",
+                      "updated_at": "string($date-time)"
                     }]
           }
     ```
@@ -50,16 +50,16 @@ The Products API allows you to perform various product-related operations, inclu
   - Example Response:
     ```json
           {
-            "count": integer,
-            "next": string($uri),
-            "previous": string($uri),
+            "count": "integer",
+            "next": "string($uri)",
+            "previous": "string($uri)",
             "results":
                     [{
-                      "id": integer,
-                      "name": string,
-                      "icon": string($uri),
-                      "created_at": string($date-time),
-                      "updated_at": string($date-time),
+                      "id": "integer",
+                      "name": "string",
+                      "icon": "string($uri)",
+                      "created_at": "string($date-time)",
+                      "updated_at": "string($date-time)"
                     }]
           }
     ```
@@ -75,11 +75,11 @@ The Products API allows you to perform various product-related operations, inclu
   - Example Response:
     ```json
           {
-            "id": integer,
-            "name": string,
-            "icon": string($uri),
-            "created_at": string($date-time),
-            "updated_at": string($date-time)
+            "id": "integer",
+            "name": "string",
+            "icon": "string($uri)",
+            "created_at": "string($date-time)",
+            "updated_at": "string($date-time)"
           }
     ```
 
@@ -94,16 +94,16 @@ The Products API allows you to perform various product-related operations, inclu
   - Example Response:
     ```json
           {
-            "id": integer,
-            "seller": string,
-            "category": string,
-            "name": string,
-            "desc": string,
-            "image": string($uri),
-            "price": string($decimal),
-            "quantity": integer,
-            "created_at": string($date-time),
-            "updated_at": string($date-time)
+            "id": "integer",
+            "seller": "string",
+            "category": "string",
+            "name": "string",
+            "desc": "string",
+            "image": "string($uri)",
+            "price": "string($decimal)",
+            "quantity": "integer",
+            "created_at": "string($date-time)",
+            "updated_at": "string($date-time)"
           }
     ```
   Non-authenticated users and authenticated users (non-admin or non-seller) can only use GET requests to retrieve product details.
@@ -122,14 +122,14 @@ The Products API allows you to perform various product-related operations, inclu
   ```json
         {
           "category": {
-              "name": string,
-              "icon":null,
+              "name": "string",
+              "icon": "null",
           },
-          "name": string,
-          "desc": string,
-          "image":null,
-          "price": string($decimal),
-          "quantity": integer
+            "name": "string",
+            "desc": "string",
+            "image": "null",
+            "price": "string($decimal)",
+            "quantity": "integer"
         }
   ```
 - **Response:**
@@ -139,17 +139,17 @@ The Products API allows you to perform various product-related operations, inclu
     ```JSON
         {
           "category": {
-              "id": integer,
-              "name": string,
-              "icon":string($uri),
-              "created_at": string($date-time),
-              "updated_at": string($date-time)
+              "id": "integer",
+              "name": "string",
+              "icon": "string($uri)",
+              "created_at": "string($date-time)",
+              "updated_at": "string($date-time)"
           },
-          "name": string,
-          "desc": string,
-          "image":string($uri),
-          "price": string($decimal),
-          "quantity": integer
+          "name": "string",
+          "desc": "string",
+          "image": "string($uri)",
+          "price": "string($decimal)",
+          "quantity": "integer"
         }
     ```
 

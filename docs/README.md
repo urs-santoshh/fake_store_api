@@ -1,10 +1,10 @@
 # FakeStore API Documentation
-Here is the Entity-Relationship diagram generated using https://dbdiagram.io/
+Here is the Entity-Relationship diagram generated using https://dbdiagram.io/. This visual representation of the models can help users understand the structure of your database at a glance.
 ![Model](/docs/fake_store_db_eer.png)
 
 ## Product Model
 
-The `Product` model is an integral part of the Fake Store API, responsible for managing product information. This documentation provides an overview of the model's attributes and their functions.
+The `Product` model is an integral part of the Fake Store API, responsible for managing product information. This documentation provides an overview of the model's attributes and their functions. 
 
 ### Model Fields
 
@@ -44,9 +44,6 @@ A default product category named "Others" is provided to handle cases where a pr
 
 - Images for the product and category are optional and can be left blank.
 
-***Feel free to extend this model or use it as part of your Fake Store API project. For more details on how to integrate this model into your project, please refer to the source code and project documentation.***
-
-***For the source code, kindly check the `models.py` file in your project repository.***
 
 ## Order and OrderItem Models
 
@@ -114,9 +111,6 @@ Both models have the following meta option:
 
 - The `cost` property in the `OrderItem` model calculates the total cost of a single order item based on the product's price and quantity.
 
-***Feel free to use these models as part of your Fake Store API project. For more details on how to integrate these models into your project, please refer to the source code and project documentation.***
-
-***For the source code, kindly check the `models.py` file in your project repository.***
 
 ## Cart and CartItem Models
 
@@ -176,9 +170,6 @@ Both models have the following meta option:
 
 - The `cost` property in the `CartItem` model calculates the total cost of a single cart item based on the product's price and quantity.
 
-***Feel free to use these models as part of your Fake Store API project to implement shopping cart functionality for users. For more details on how to integrate these models into your project, please refer to the source code and project documentation.***
-
-***For the source code, kindly check the `models.py` file in your project repository.***
 
 ## Profile and Address Models
 
@@ -248,8 +239,5 @@ Both models have the following meta option:
 
 - Users can set a default address, which may be used as the primary address for billing or shipping.
 
-***Feel free to use these models as part of your Fake Store API project to manage user profiles and addresses. For more details on how to integrate these models into your project, please refer to the source code and project documentation.***
+***Note: Feel free to extend this model or use these models as part of your Fake Store API project. For more details on how to integrate these models into your project, please refer to the source code and project documentation. For the source code, kindly check the respective `models.py` file in your project repository.***
 
-***For the source code, kindly check the `models.py` file in your project repository.***
-
-### Feel free to customize the models' descriptions and diagrams based on your project's specific requirements. This visual representation of the models can help users understand the structure of your database at a glance.
