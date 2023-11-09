@@ -69,6 +69,7 @@ If you prefer to use MySQL in a Docker container, ensure you have Docker install
       MYSQL_ROOT_PASSWORD = {your-root-password}
       MYSQL_USER = {your-username}
    ```
+
 2. Start the MySQL container using Docker Compose:
 
    ```bash
@@ -121,7 +122,6 @@ Run the following command to create superuser for admin privileges:
       python manage.py createsuperuser
    ```
 
-
 ### Run the Development Server
 
 Start the development server to run the FakeStore API locally:
@@ -131,7 +131,6 @@ Start the development server to run the FakeStore API locally:
    ```
 
 The API should now be running at `http://127.0.0.1:8000/`.
-
 
 ### Access API Documentation
 
@@ -155,6 +154,49 @@ You can now start using the FakeStore APIs to manage various aspects of the appl
 
 Each API documentation provides details on available endpoints and how to use them.
 
+### API Configuration Settings
+
+The Fake Store API is powered by Django REST framework, and it offers various configuration options to control the behavior of the API. Below, we describe the key configuration settings used in this project:
+
+#### Pagination
+
+By default, the API uses `PageNumberPagination` to paginate large lists of data. The `PAGE_SIZE` setting is configured to limit the number of items per page to 10. This means that when querying a list of resources, such as products or orders, only 10 items will be shown per page. Users can navigate through the pages by using pagination links.
+
+   ```python
+      REST_FRAMEWORK = {
+         'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+         'PAGE_SIZE': 10,
+      }
+   ```
+
+#### Filtering
+
+To enable filtering of data in the API, we use the `DjangoFilterBackend` provided by the `django_filters` package. This allows users to filter lists of resources based on specific criteria, such as filtering products by category or filtering orders by status.
+
+   ```python
+      REST_FRAMEWORK = {
+         'DEFAULT_FILTER_BACKENDS': (
+            'django_filters.rest_framework.DjangoFilterBackend',
+         ),
+      }
+   ```
+
+#### Throttling
+
+Throttling is applied to control the rate at which API requests can be made. It helps prevent abuse and ensure fair usage of the API. We have defined two throttle classes: `AnonRateThrottle` and `UserRateThrottle`. Anonymous users are limited to 100 requests per day, while authenticated users are allowed up to 1000 requests per day.
+
+   ```python
+      REST_FRAMEWORK = {
+      'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+      ],
+      'DEFAULT_THROTTLE_RATES': {
+        'anon': '100/day',
+        'user': '1000/day'
+      }
+   }
+   ```
 
 ### Models
 For detailed information on the models used in the FakeStore API, please refer to the [Model Documentation](/docs/README.md).
