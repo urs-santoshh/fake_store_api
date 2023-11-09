@@ -13,6 +13,7 @@ from orders.serializers import (
     OrderReadSerializer,
     OrderWriteSerializer,
 )
+from orders.filters import OrderFilter
 
 
 class OrderItemViewSet(viewsets.ModelViewSet):
@@ -47,6 +48,7 @@ class OrderViewSet(viewsets.ModelViewSet):
 
     queryset = Order.objects.all()
     permission_classes = [IsOrderByBuyerOrAdmin]
+    filterset_class = OrderFilter
 
     def get_serializer_class(self):
         if self.action in ("create", "update", "partial_update", "destroy"):
