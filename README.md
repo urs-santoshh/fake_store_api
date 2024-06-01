@@ -86,23 +86,23 @@ If you prefer to use the default SQLite database included with the project, foll
 2. Uncomment the default SQLite database settings by removing the comment (#) in front of the following lines and comment the MySql database settings:
 
    ```bash
-       DATABASES = {
-             'default': {
-                 'ENGINE': 'django.db.backends.sqlite3',
-                 'NAME': BASE_DIR / 'db.sqlite3',
-             }
-         }
-   
        # DATABASES = {
-       #     'default': {
-       #         'ENGINE': 'django.db.backends.mysql',
-       #         'NAME': os.environ.get('MYSQL_DATABASE'),
-       #         'USER': os.environ.get('MYSQL_USER'),
-       #         'PASSWORD': os.environ.get('MYSQL_PASSWORD'),
-       #         'HOST': os.environ.get('MYSQL_HOST'),  # Use the service name defined in your Docker Compose file in production
-       #         'PORT': os.environ.get('MYSQL_PORT'),   # Default MySQL port
-       #     }
-       # }
+       #      'default': {
+       #          'ENGINE': 'django.db.backends.sqlite3',
+       #          'NAME': BASE_DIR / 'db.sqlite3',
+       #      }
+       #  }
+   
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': os.environ.get('MYSQL_DATABASE'),
+                'USER': os.environ.get('MYSQL_USER'),
+                'PASSWORD': os.environ.get('MYSQL_PASSWORD'),
+                'HOST': os.environ.get('MYSQL_HOST'),  # Use the service name defined in your Docker Compose file in production
+                'PORT': os.environ.get('MYSQL_PORT'),   # Default MySQL port
+            }
+        }
    ```
 
 ### Apply Migrations
